@@ -20,18 +20,18 @@ export function About() {
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             <BlurIn delay={0.1}>
               <p className="body-copy text-[0.9375rem] leading-relaxed">
-                OPCODE IMPACT 2026 is a premier National 24-Hour Hackathon bringing
-                together student engineers, researchers, and academic institutions across
-                India to develop secure, resilient, and sustainable technological
-                solutions.
+                OPCODE IMPACT 2026 is a premier National Level 24-Hour Cybersecurity for Sustainable
+                Development Hackathon bringing together student engineers, researchers, and academic
+                institutions across India to develop secure, resilient, and sustainable
+                technological solutions.
               </p>
             </BlurIn>
             <BlurIn delay={0.22}>
               <p className="body-copy text-[0.9375rem] leading-relaxed">
-                Organised by the Department of Computer Science &amp; Engineering (Cyber
-                Security) at Jyothi Engineering College, Thrissur, the hackathon bridges
-                cybersecurity innovation with the United Nations Sustainable Development
-                Goals to address real-world challenges.
+                Organised by the Department of Computer Science &amp; Engineering (Cyber Security)
+                at Jyothi Engineering College, Thrissur, the hackathon bridges cybersecurity
+                innovation with the United Nations Sustainable Development Goals to address
+                real-world challenges.
               </p>
             </BlurIn>
           </div>
@@ -92,8 +92,8 @@ export function RulesEligibility() {
           <SectionHeading>Who Can Participate</SectionHeading>
           <BlurIn delay={0.12}>
             <p className="body-copy mt-4 max-w-xl text-[0.9375rem]">
-              Official eligibility guidelines from the national event poster. Open to
-              promising student innovators across diverse academic disciplines.
+              Official eligibility guidelines from the national event poster. Open to promising
+              student innovators across diverse academic disciplines.
             </p>
           </BlurIn>
         </div>
@@ -139,8 +139,8 @@ export function RulesEligibility() {
               </div>
             </div>
             <p className="body-copy mt-4 text-xs text-white/70 leading-relaxed">
-              Teams may consist of 2 to 4 members. Interdisciplinary collaboration
-              across engineering and science departments is encouraged.
+              Teams may consist of 2 to 4 members. Interdisciplinary collaboration across
+              engineering and science departments is encouraged.
             </p>
           </div>
         </div>

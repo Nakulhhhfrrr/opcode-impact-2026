@@ -43,9 +43,7 @@ export function Countdown() {
       {units.map(([label, value], i) => (
         <div
           key={label}
-          className={`min-w-0 pr-3 md:pr-8 ${
-            i > 0 ? "border-l border-white/15 pl-3 md:pl-8" : ""
-          }`}
+          className={`min-w-0 pr-3 md:pr-8 ${i > 0 ? "border-l border-white/15 pl-3 md:pl-8" : ""}`}
         >
           <div className="font-mono text-[1.5rem] leading-none font-light tabular-nums md:text-[2.5rem]">
             {value === null ? "--" : String(value).padStart(2, "0")}
@@ -55,7 +53,6 @@ export function Countdown() {
           </div>
         </div>
       ))}
-
     </motion.div>
   );
 }

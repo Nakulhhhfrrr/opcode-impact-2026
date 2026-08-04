@@ -31,7 +31,6 @@ export function MaskReveal({
   );
 }
 
-
 /** Blur to focus — copy resolves into sharpness. */
 export function BlurIn({
   children,
@@ -132,13 +131,7 @@ export const staggerChild: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
 };
 
-export function Stagger({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+export function Stagger({ children, className }: { children: ReactNode; className?: string }) {
   return (
     <motion.div
       className={className}
@@ -152,13 +145,7 @@ export function Stagger({
   );
 }
 
-export function StaggerItem({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
+export function StaggerItem({ children, className }: { children: ReactNode; className?: string }) {
   return (
     <motion.div className={className} variants={staggerChild}>
       {children}

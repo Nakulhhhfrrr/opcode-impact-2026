@@ -14,7 +14,6 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav } from "../components/site/Nav";
 import { Footer } from "../components/site/Footer";
 
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -80,15 +79,51 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "OPCODE IMPACT 2026" },
+      {
+        title:
+          "OPCODE IMPACT 2026 | National Level 24-Hour Cybersecurity for Sustainable Development Hackathon",
+      },
       {
         name: "description",
         content:
-          "National 24-Hour Cybersecurity for Sustainable Development Hackathon — Jyothi Engineering College, Thrissur.",
+          "Official website of OPCODE IMPACT 2026, a National Level 24-Hour Cybersecurity for Sustainable Development Hackathon hosted by the Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College, Thrissur.",
       },
-      { name: "author", content: "Jyothi Engineering College" },
+      {
+        name: "author",
+        content:
+          "Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://opcode-impact-2026.vercel.app" },
+      {
+        property: "og:title",
+        content:
+          "OPCODE IMPACT 2026 | National Level 24-Hour Cybersecurity for Sustainable Development Hackathon",
+      },
+      {
+        property: "og:description",
+        content:
+          "Official website of OPCODE IMPACT 2026, a National Level 24-Hour Cybersecurity for Sustainable Development Hackathon hosted by the Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College, Thrissur.",
+      },
+      {
+        property: "og:image",
+        content: "https://opcode-impact-2026.vercel.app/og-image.png",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content:
+          "OPCODE IMPACT 2026 | National Level 24-Hour Cybersecurity for Sustainable Development Hackathon",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Official website of OPCODE IMPACT 2026, a National Level 24-Hour Cybersecurity for Sustainable Development Hackathon hosted by the Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College, Thrissur.",
+      },
+      {
+        property: "twitter:image",
+        content: "https://opcode-impact-2026.vercel.app/og-image.png",
+      },
       { name: "theme-color", content: "#08090B" },
     ],
     links: [
@@ -100,6 +135,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Geist:wght@200;300;400;500;600&family=Geist+Mono:wght@300;400&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { rel: "icon", href: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
   }),
   shellComponent: RootShell,
@@ -134,4 +172,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-

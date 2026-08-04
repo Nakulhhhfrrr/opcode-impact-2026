@@ -11,8 +11,8 @@ export function Tracks() {
           <SectionHeading>Competition Tracks</SectionHeading>
           <BlurIn delay={0.12}>
             <p className="body-copy mt-4 max-w-xl text-[0.9375rem]">
-              OPCODE IMPACT features two distinct competition tracks with dedicated focus
-              areas and evaluation criteria.
+              OPCODE IMPACT features two distinct competition tracks with dedicated focus areas and
+              evaluation criteria.
             </p>
           </BlurIn>
         </div>
@@ -42,9 +42,9 @@ export function Tracks() {
             </h3>
 
             <p className="body-copy mt-4 text-[0.9375rem] leading-relaxed text-white/80">
-              Participants solve practical cybersecurity challenges contributed by
-              industry and government organizations. Real-world cybersecurity problem
-              statements designed for deployable impact.
+              Participants solve practical cybersecurity challenges contributed by industry and
+              government organizations. Real-world cybersecurity problem statements designed for
+              deployable impact.
             </p>
           </div>
 
@@ -94,15 +94,13 @@ export function Tracks() {
             </h3>
 
             <p className="body-copy mt-4 text-[0.9375rem] leading-relaxed text-white/80">
-              Participants create cybersecurity-enabled solutions that address real
-              societal challenges while supporting the UN Sustainable Development Goals.
+              Participants create cybersecurity-enabled solutions that address real societal
+              challenges while supporting the UN Sustainable Development Goals.
             </p>
           </div>
 
           <div className="mt-8 border-t border-white/10 pt-6">
-            <span className="label-micro mb-3 block text-white/40 uppercase">
-              UN SDG Alignment
-            </span>
+            <span className="label-micro mb-3 block text-white/40 uppercase">UN SDG Alignment</span>
             <Stagger className="flex flex-col gap-2">
               {[
                 "SDG 3 — Good Health & Well-being",
@@ -183,7 +181,11 @@ export function ProblemStatements() {
       <div className="mt-12 lg:mt-16">
         {[
           { code: "TRACK 01", label: "Industry Challenge Statement Set", status: "Coming Soon" },
-          { code: "TRACK 02", label: "SDG Innovation Challenge Statement Set", status: "Coming Soon" },
+          {
+            code: "TRACK 02",
+            label: "SDG Innovation Challenge Statement Set",
+            status: "Coming Soon",
+          },
         ].map((s, i) => (
           <DriftIn key={s.code} from="up" distance={20} delay={i * 0.08}>
             <div className="group grid grid-cols-[auto_1fr] items-center gap-x-6 border-t border-border py-6 transition-colors duration-500 hover:border-cyan-accent md:grid-cols-[8rem_1fr_auto]">

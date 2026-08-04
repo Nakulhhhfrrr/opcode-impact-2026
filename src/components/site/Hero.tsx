@@ -58,7 +58,7 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.35 }}
             className="flex flex-wrap items-center gap-x-5 gap-y-2"
           >
-            <span className="label-micro text-cyan-accent">National Hackathon</span>
+            <span className="label-micro text-cyan-accent">National Level Hackathon</span>
             <span className="h-px w-10 bg-white/25" />
             <span className="label-micro text-white/70">
               9–10 October 2026 · Jyothi Engineering College · Thrissur, Kerala
@@ -66,8 +66,7 @@ export function Hero() {
           </motion.div>
 
           <h1 className="mt-7 display-xl text-[3rem] sm:text-[4.5rem] lg:text-[6.5rem] xl:text-[7.5rem]">
-            <Word delay={0.5}>OPCODE</Word>{" "}
-            <Word delay={0.6}>IMPACT</Word>{" "}
+            <Word delay={0.5}>OPCODE</Word> <Word delay={0.6}>IMPACT</Word>{" "}
             <span className="text-cyan-accent">
               <Word delay={0.7}>2026</Word>
             </span>
@@ -85,9 +84,9 @@ export function Hero() {
                 transition={{ duration: 1.1, ease: EASE, delay: 1.15 }}
                 className="mt-4 max-w-lg text-sm font-light leading-relaxed text-white/75"
               >
-                National 24-Hour Cybersecurity for Sustainable Development Hackathon.
-                Hosted by the Department of Computer Science &amp; Engineering (Cyber
-                Security), Jyothi Engineering College, Thrissur, Kerala.
+                National Level 24-Hour Cybersecurity for Sustainable Development Hackathon. Hosted
+                by the Department of Computer Science &amp; Engineering (Cyber Security), Jyothi
+                Engineering College, Thrissur, Kerala.
               </motion.p>
             </div>
 
@@ -137,9 +136,7 @@ export function Hero() {
         style={{ opacity }}
         className="pointer-events-none absolute right-6 bottom-14 hidden flex-col items-center gap-3 md:flex"
       >
-        <span className="label-micro [writing-mode:vertical-rl] text-white/55">
-          Scroll
-        </span>
+        <span className="label-micro [writing-mode:vertical-rl] text-white/55">Scroll</span>
         <span className="h-14 w-px bg-gradient-to-b from-white/50 to-transparent" />
       </motion.div>
     </section>

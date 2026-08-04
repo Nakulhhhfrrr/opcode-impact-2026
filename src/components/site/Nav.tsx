@@ -47,9 +47,7 @@ export function Nav() {
         >
           <div className="shell flex h-16 items-center justify-between md:h-20">
             <Link to="/" className="group flex items-baseline gap-2.5">
-              <span className="text-sm font-medium tracking-[0.22em] uppercase">
-                Opcode
-              </span>
+              <span className="text-sm font-medium tracking-[0.22em] uppercase">Opcode</span>
               <span className="text-sm font-light tracking-[0.22em] text-steel uppercase transition-colors duration-500 group-hover:text-cyan-accent">
                 Impact
               </span>

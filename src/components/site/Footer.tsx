@@ -14,9 +14,9 @@ export function Footer() {
               <span className="font-mono text-[0.625rem] text-cyan-accent">26</span>
             </div>
             <p className="body-copy mt-5 max-w-sm text-sm">
-              National 24-Hour Cybersecurity for Sustainable Development Hackathon.
-              Department of Computer Science &amp; Engineering (Cyber Security), Jyothi
-              Engineering College, Cheruthuruthy, Thrissur, Kerala.
+              National Level 24-Hour Cybersecurity for Sustainable Development Hackathon. Department
+              of Computer Science &amp; Engineering (Cyber Security), Jyothi Engineering College,
+              Cheruthuruthy, Thrissur, Kerala.
             </p>
           </div>
 

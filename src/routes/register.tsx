@@ -15,6 +15,13 @@ export const Route = createFileRoute("/register")({
       { name: "description", content: DESCRIPTION },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: "https://opcode-impact-2026.vercel.app/og-image.png" },
+      { property: "og:url", content: "https://opcode-impact-2026.vercel.app/register" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: "https://opcode-impact-2026.vercel.app/og-image.png" },
     ],
   }),
   component: Page,
@@ -37,10 +44,9 @@ function Page() {
 
       <BlurIn delay={0.15}>
         <p className="body-copy mt-8 max-w-lg text-[0.9375rem]">
-          Open to student teams of 2–4 members from engineering and arts &amp;
-          science colleges across India. Hosted by the Department of Computer
-          Science &amp; Engineering (Cyber Security), Jyothi Engineering
-          College, Thrissur, Kerala.
+          Open to student teams of 2–4 members from engineering and arts &amp; science colleges
+          across India. Hosted by the Department of Computer Science &amp; Engineering (Cyber
+          Security), Jyothi Engineering College, Thrissur, Kerala.
         </p>
       </BlurIn>
 
@@ -75,8 +81,8 @@ function Page() {
               Food &amp; Accommodation Included
             </p>
             <p className="body-copy mt-1.5 text-xs text-white/70 leading-relaxed">
-              All registered participants receive complimentary food and
-              accommodation throughout the 24-hour hackathon.
+              All registered participants receive complimentary food and accommodation throughout
+              the 24-hour hackathon.
             </p>
           </div>
         </div>
@@ -121,9 +127,8 @@ function Page() {
       {/* Payment notice */}
       <DriftIn from="up" delay={0.46}>
         <p className="mt-6 text-xs font-light text-steel/70 leading-relaxed max-w-lg">
-          Registration is currently being collected through Google Forms.
-          Payment instructions will be communicated separately after
-          registration.
+          Registration is currently being collected through Google Forms. Payment instructions will
+          be communicated separately after registration.
         </p>
       </DriftIn>
     </main>

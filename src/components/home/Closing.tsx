@@ -17,9 +17,9 @@ export function RegistrationCTA() {
         </h2>
         <DriftIn from="up" delay={0.2}>
           <p className="body-copy mt-6 max-w-lg text-[0.9375rem]">
-            Open to student teams of 2–4 members from engineering and arts &amp; science
-            colleges across India. Hosted by the Department of Computer Science &amp;
-            Engineering (Cyber Security), Jyothi Engineering College, Thrissur, Kerala.
+            Open to student teams of 2–4 members from engineering and arts &amp; science colleges
+            across India. Hosted by the Department of Computer Science &amp; Engineering (Cyber
+            Security), Jyothi Engineering College, Thrissur, Kerala.
           </p>
         </DriftIn>
 
@@ -54,9 +54,8 @@ export function RegistrationCTA() {
                 Food &amp; Accommodation Included
               </p>
               <p className="body-copy mt-1.5 text-xs text-white/70 leading-relaxed">
-                All registered participants receive complimentary food and
-                accommodation throughout the 24-hour hackathon. Focus entirely
-                on building — we take care of the rest.
+                All registered participants receive complimentary food and accommodation throughout
+                the 24-hour hackathon. Focus entirely on building — we take care of the rest.
               </p>
             </div>
           </div>
@@ -101,7 +100,8 @@ export function RegistrationCTA() {
         {/* Payment notice */}
         <DriftIn from="up" delay={0.5}>
           <p className="mt-5 text-xs font-light text-steel/70 leading-relaxed max-w-lg">
-            Registration is currently being collected through Google Forms. Payment instructions will be communicated separately after registration.
+            Registration is currently being collected through Google Forms. Payment instructions
+            will be communicated separately after registration.
           </p>
         </DriftIn>
       </div>
@@ -267,7 +267,10 @@ export function Contact() {
               ["Host Department", "Department of Computer Science & Engineering (Cyber Security)"],
               ["Host Institution", "Jyothi Engineering College, Thrissur, Kerala"],
               ["Event Dates", "9–10 October 2026"],
-              ["Campus Address", "Jyothi Engineering College, Cheruthuruthy, Thrissur — 679 531, Kerala, India."],
+              [
+                "Campus Address",
+                "Jyothi Engineering College, Cheruthuruthy, Thrissur — 679 531, Kerala, India.",
+              ],
             ].map(([label, value], i) => (
               <DriftIn key={label} from="up" delay={i * 0.06}>
                 <div className="border-t border-border pt-4">
@@ -404,7 +407,7 @@ export function QuickInfoStrip() {
     { label: "Register via", value: "Google Forms" },
     { label: "Food", value: "Included" },
     { label: "Accommodation", value: "Included" },
-    { label: "Duration", value: "24-Hour National Hackathon" },
+    { label: "Duration", value: "24-Hour National Level Hackathon" },
   ];
 
   return (

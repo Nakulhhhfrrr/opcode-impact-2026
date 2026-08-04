@@ -13,6 +13,13 @@ export const Route = createFileRoute("/gallery")({
       { name: "description", content: DESCRIPTION },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
+      { property: "og:image", content: "https://opcode-impact-2026.vercel.app/og-image.png" },
+      { property: "og:url", content: "https://opcode-impact-2026.vercel.app/gallery" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: "https://opcode-impact-2026.vercel.app/og-image.png" },
     ],
   }),
   component: Page,
@@ -30,8 +37,8 @@ function Page() {
       </h1>
       <BlurIn delay={0.15}>
         <p className="body-copy mt-8 max-w-lg text-[0.9375rem]">
-          Event photographs, highlights, and media from OPCODE IMPACT 2026 will
-          be published here. Check back after the event on 9–10 October 2026.
+          Event photographs, highlights, and media from OPCODE IMPACT 2026 will be published here.
+          Check back after the event on 9–10 October 2026.
         </p>
       </BlurIn>
       <BlurIn delay={0.28}>

@@ -25,9 +25,7 @@ export function Section({
 export function Eyebrow({ index, children }: { index?: string; children: ReactNode }) {
   return (
     <div className="flex items-baseline gap-4">
-      {index ? (
-        <span className="label-micro text-cyan-accent">{index}</span>
-      ) : null}
+      {index ? <span className="label-micro text-cyan-accent">{index}</span> : null}
       <span className="label-micro">{children}</span>
     </div>
   );
@@ -41,9 +39,7 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <h2
-      className={`display-lg text-[2.25rem] md:text-[3.5rem] lg:text-[4rem] ${className ?? ""}`}
-    >
+    <h2 className={`display-lg text-[2.25rem] md:text-[3.5rem] lg:text-[4rem] ${className ?? ""}`}>
       <MaskReveal>{children}</MaskReveal>
     </h2>
   );

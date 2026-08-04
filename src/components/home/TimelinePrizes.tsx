@@ -24,7 +24,7 @@ export function Timeline() {
     ],
     [
       "9–10 October 2026",
-      "National Hackathon",
+      "National Level Hackathon",
       "24-hour continuous hackathon event at Jyothi Engineering College campus, Thrissur, Kerala.",
     ],
   ] as const;
@@ -37,8 +37,8 @@ export function Timeline() {
           <SectionHeading>Event Timeline</SectionHeading>
           <BlurIn delay={0.12}>
             <p className="body-copy mt-4 max-w-lg text-[0.9375rem]">
-              Detailed event schedule will be published soon. The hackathon runs
-              continuously for 24 hours on 9–10 October 2026.
+              Detailed event schedule will be published soon. The hackathon runs continuously for 24
+              hours on 9–10 October 2026.
             </p>
           </BlurIn>
         </div>
@@ -70,7 +70,8 @@ export function Timeline() {
 
         <div className="pl-0 md:pl-[15.5rem] pt-2">
           <p className="label-micro text-steel italic">
-            Full schedule — including checkpoints, mentoring sessions, and final presentations — will be published before the event.
+            Full schedule — including checkpoints, mentoring sessions, and final presentations —
+            will be published before the event.
           </p>
         </div>
       </div>
@@ -115,9 +116,8 @@ export function Prizes() {
           <SectionHeading>Awards &amp; Opportunities</SectionHeading>
           <BlurIn delay={0.12}>
             <p className="body-copy mt-4 max-w-lg text-[0.9375rem]">
-              OPCODE IMPACT 2026 goes beyond trophies — outstanding teams unlock
-              prizes, career pathways, and industry connections that last well
-              beyond the 24 hours.
+              OPCODE IMPACT 2026 goes beyond trophies — outstanding teams unlock prizes, career
+              pathways, and industry connections that last well beyond the 24 hours.
             </p>
           </BlurIn>
         </div>
@@ -132,9 +132,7 @@ export function Prizes() {
                 <h3 className="text-[1rem] font-light tracking-[-0.015em] text-foreground">
                   {o.label}
                 </h3>
-                <p className="body-copy mt-1.5 text-sm text-steel leading-relaxed">
-                  {o.body}
-                </p>
+                <p className="body-copy mt-1.5 text-sm text-steel leading-relaxed">{o.body}</p>
               </div>
             </div>
           </DriftIn>
@@ -152,10 +150,22 @@ export function Prizes() {
 
 export function Judges() {
   const profiles = [
-    { label: "Industry Experts", body: "Senior professionals from cybersecurity, fintech, and enterprise technology sectors." },
-    { label: "Faculty Members", body: "Distinguished academics from leading engineering institutions across India." },
-    { label: "Startup Founders", body: "Founders building at the intersection of security, sustainability, and innovation." },
-    { label: "Cybersecurity Professionals", body: "Practitioners with hands-on expertise in offensive and defensive security disciplines." },
+    {
+      label: "Industry Experts",
+      body: "Senior professionals from cybersecurity, fintech, and enterprise technology sectors.",
+    },
+    {
+      label: "Faculty Members",
+      body: "Distinguished academics from leading engineering institutions across India.",
+    },
+    {
+      label: "Startup Founders",
+      body: "Founders building at the intersection of security, sustainability, and innovation.",
+    },
+    {
+      label: "Cybersecurity Professionals",
+      body: "Practitioners with hands-on expertise in offensive and defensive security disciplines.",
+    },
   ];
 
   return (
@@ -166,9 +176,8 @@ export function Judges() {
           <SectionHeading>Judging Panel</SectionHeading>
           <BlurIn delay={0.12}>
             <p className="body-copy mt-4 max-w-lg text-[0.9375rem]">
-              Our panel will consist of experienced professionals drawn from
-              industry, academia, and the startup ecosystem. Full panel
-              announcement coming soon.
+              Our panel will consist of experienced professionals drawn from industry, academia, and
+              the startup ecosystem. Full panel announcement coming soon.
             </p>
           </BlurIn>
         </div>
@@ -190,9 +199,7 @@ export function Judges() {
             <h3 className="mt-4 text-[1.125rem] font-light tracking-[-0.02em]">
               <MaskReveal>{p.label}</MaskReveal>
             </h3>
-            <p className="body-copy mt-2 text-xs text-steel leading-relaxed">
-              {p.body}
-            </p>
+            <p className="body-copy mt-2 text-xs text-steel leading-relaxed">{p.body}</p>
           </motion.div>
         ))}
       </div>
@@ -222,18 +229,18 @@ export function Sponsors() {
       </div>
 
       <div className="mt-12 space-y-px border border-border bg-border lg:mt-16">
-        {(([
-          ["Title Partner", "Coming Soon"],
-          ["Gold Partners", "Coming Soon"],
-          ["Community & Institutional Partners", "Coming Soon"],
-        ] as const)).map(([tier, status], i) => (
+        {(
+          [
+            ["Title Partner", "Coming Soon"],
+            ["Gold Partners", "Coming Soon"],
+            ["Community & Institutional Partners", "Coming Soon"],
+          ] as const
+        ).map(([tier, status], i) => (
           <DriftIn key={tier} from="left" distance={20} delay={i * 0.07}>
             <div className="grid gap-4 bg-background p-6 md:grid-cols-[14rem_1fr] md:p-8">
               <span className="label-micro text-cyan-accent">{tier}</span>
               <div className="flex items-center">
-                <span className="text-[0.9375rem] font-light text-steel/70 italic">
-                  {status}
-                </span>
+                <span className="text-[0.9375rem] font-light text-steel/70 italic">{status}</span>
               </div>
             </div>
           </DriftIn>
