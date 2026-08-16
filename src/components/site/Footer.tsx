@@ -15,9 +15,32 @@ export function Footer() {
             </div>
             <p className="body-copy mt-5 max-w-sm text-sm">
               National Level 24-Hour Cybersecurity for Sustainable Development Hackathon. Department
-              of Computer Science &amp; Engineering (Cyber Security), Jyothi Engineering College,
-              Cheruthuruthy, Thrissur, Kerala.
+              of Computer Science &amp; Engineering (Cyber Security), Jyothi Engineering College
+              (Autonomous), Cheruthuruthy, Thrissur, Kerala.
             </p>
+            {/* Logos strip */}
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <img
+                src="/WhatsApp Image 2026-08-14 at 1.23.53 PM.jpeg"
+                alt="Jyothi Engineering College (Autonomous)"
+                className="h-8 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity duration-300"
+              />
+              <img
+                src="/WhatsApp Image 2026-08-14 at 1.24.30 PM.jpeg"
+                alt="CSI"
+                className="h-7 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity duration-300"
+              />
+              <img
+                src="/WhatsApp Image 2026-08-14 at 1.24.31 PM.jpeg"
+                alt="Government of Kerala"
+                className="h-7 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity duration-300"
+              />
+              <img
+                src="/cyea-logo.jpg"
+                alt="CYEA"
+                className="h-8 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity duration-300"
+              />
+            </div>
           </div>
 
           <div>
@@ -49,6 +72,7 @@ export function Footer() {
                 { label: "FAQ", to: "/faq" },
                 { label: "Contact", to: "/contact" },
                 { label: "Register", to: "/register" },
+                { label: "Terms & Conditions", to: "/terms-and-conditions" },
               ].map((l) => (
                 <li key={l.to}>
                   <Link
@@ -64,7 +88,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col gap-3 border-t border-border pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="label-micro">© 2026 Jyothi Engineering College</p>
+          <p className="label-micro">© 2026 Jyothi Engineering College (Autonomous)</p>
           <p className="label-micro">Thrissur · Kerala · India</p>
         </div>
       </div>

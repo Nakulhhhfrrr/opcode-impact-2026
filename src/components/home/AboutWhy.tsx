@@ -29,12 +29,41 @@ export function About() {
             <BlurIn delay={0.22}>
               <p className="body-copy text-[0.9375rem] leading-relaxed">
                 Organised by the Department of Computer Science &amp; Engineering (Cyber Security)
-                at Jyothi Engineering College, Thrissur, the hackathon bridges cybersecurity
+                at Jyothi Engineering College (Autonomous), Thrissur, the hackathon bridges cybersecurity
                 innovation with the United Nations Sustainable Development Goals to address
                 real-world challenges.
               </p>
             </BlurIn>
           </div>
+
+          {/* Institutional logos */}
+          <BlurIn delay={0.3}>
+            <div className="mt-8 flex flex-wrap items-center gap-6 md:gap-8 border-t border-border/50 pt-6">
+              <img
+                src="/WhatsApp Image 2026-08-14 at 1.23.53 PM.jpeg"
+                alt="Jyothi Engineering College (Autonomous)"
+                className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
+              <span className="h-8 w-px bg-white/10 hidden sm:block" />
+              <img
+                src="/WhatsApp Image 2026-08-14 at 1.24.30 PM.jpeg"
+                alt="CSI"
+                className="h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
+              <span className="h-8 w-px bg-white/10 hidden sm:block" />
+              <img
+                src="/WhatsApp Image 2026-08-14 at 1.24.31 PM.jpeg"
+                alt="Government of Kerala"
+                className="h-10 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
+              <span className="h-8 w-px bg-white/10 hidden sm:block" />
+              <img
+                src="/cyea-logo.jpg"
+                alt="CYEA — Cyber Security Engineering Association"
+                className="h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          </BlurIn>
         </div>
       </div>
 
@@ -72,7 +101,7 @@ export function About() {
           </ScaleReveal>
           <DriftIn from="up" delay={0.1}>
             <p className="label-micro mt-3 text-steel">
-              Jyothi Engineering College · Cheruthuruthy · Thrissur, Kerala
+              Jyothi Engineering College (Autonomous) · Cheruthuruthy · Thrissur, Kerala
             </p>
           </DriftIn>
         </div>

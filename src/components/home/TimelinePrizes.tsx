@@ -23,9 +23,19 @@ export function Timeline() {
       "Last date to complete team registration before the hackathon begins.",
     ],
     [
-      "9–10 October 2026",
-      "National Level Hackathon",
-      "24-hour continuous hackathon event at Jyothi Engineering College campus, Thrissur, Kerala.",
+      "9 October 2026 · 9 AM – 11 AM",
+      "Check-In & Inauguration",
+      "Participant check-in and team verification at Jyothi Engineering College (Autonomous), Thrissur. Inauguration ceremony follows.",
+    ],
+    [
+      "9 October 2026 · 11 AM",
+      "Hackathon Begins",
+      "The 24-hour coding sprint kicks off. Teams begin working on their assigned problem statements.",
+    ],
+    [
+      "10 October 2026 · 11 AM",
+      "Hackathon Ends & Presentations",
+      "Submission deadline and final project presentations to the judging panel at Jyothi Engineering College (Autonomous).",
     ],
   ] as const;
 
@@ -38,7 +48,7 @@ export function Timeline() {
           <BlurIn delay={0.12}>
             <p className="body-copy mt-4 max-w-lg text-[0.9375rem]">
               Detailed event schedule will be published soon. The hackathon runs continuously for 24
-              hours on 9–10 October 2026.
+              hours on 9–10 October 2026. Check-in is from 9 AM to 11 AM on October 9th.
             </p>
           </BlurIn>
         </div>

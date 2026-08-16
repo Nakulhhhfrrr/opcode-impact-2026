@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { BlurIn, DriftIn, MaskReveal } from "@/components/site/motion-primitives";
 
 const TITLE = "Registration — OPCODE IMPACT 2026";
@@ -28,6 +29,8 @@ export const Route = createFileRoute("/register")({
 });
 
 function Page() {
+  const [agreed, setAgreed] = useState(false);
+
   return (
     <main className="shell flex min-h-[100svh] flex-col justify-center py-40">
       <div className="flex items-baseline gap-4">
@@ -46,7 +49,7 @@ function Page() {
         <p className="body-copy mt-8 max-w-lg text-[0.9375rem]">
           Open to student teams of 2–4 members from engineering and arts &amp; science colleges
           across India. Hosted by the Department of Computer Science &amp; Engineering (Cyber
-          Security), Jyothi Engineering College, Thrissur, Kerala.
+          Security), Jyothi Engineering College (Autonomous), Thrissur, Kerala.
         </p>
       </BlurIn>
 
@@ -88,18 +91,79 @@ function Page() {
         </div>
       </DriftIn>
 
+      {/* Consent checkbox */}
+      <DriftIn from="up" delay={0.36}>
+        <div className="mt-8 max-w-xl">
+          <label
+            htmlFor="terms-consent"
+            className="flex items-start gap-3.5 cursor-pointer group"
+          >
+            <div className="relative mt-0.5 shrink-0">
+              <input
+                type="checkbox"
+                id="terms-consent"
+                checked={agreed}
+                onChange={(e) => setAgreed(e.target.checked)}
+                className="peer h-4 w-4 cursor-pointer appearance-none rounded-none border border-border bg-background transition-colors checked:border-cyan-accent checked:bg-cyan-accent focus:outline-none focus:ring-1 focus:ring-cyan-accent focus:ring-offset-1 focus:ring-offset-background"
+              />
+              <svg
+                className="pointer-events-none absolute inset-0 m-auto h-2.5 w-2.5 text-background opacity-0 peer-checked:opacity-100 transition-opacity"
+                viewBox="0 0 10 8"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M1 4l3 3 5-6"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <span className="text-xs font-light text-steel/80 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+              I have read and agree to the OPCODE IMPACT 2026{" "}
+              <Link
+                to="/terms-and-conditions"
+                className="text-cyan-accent underline underline-offset-2 hover:text-foreground transition-colors duration-300"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Terms &amp; Conditions
+              </Link>{" "}
+              and{" "}
+              <Link
+                to="/terms-and-conditions"
+                className="text-cyan-accent underline underline-offset-2 hover:text-foreground transition-colors duration-300"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Code of Conduct
+              </Link>
+              .
+            </span>
+          </label>
+        </div>
+      </DriftIn>
+
       {/* CTA + QR */}
-      <DriftIn from="up" delay={0.38}>
-        <div className="mt-10 grid gap-6 sm:grid-cols-[1fr_auto] items-center max-w-xl">
+      <DriftIn from="up" delay={0.42}>
+        <div className="mt-6 grid gap-6 sm:grid-cols-[1fr_auto] items-center max-w-xl">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
             <a
-              href={FORM_URL}
-              target="_blank"
+              href={agreed ? FORM_URL : undefined}
+              target={agreed ? "_blank" : undefined}
               rel="noopener noreferrer"
-              className="group relative overflow-hidden bg-foreground px-9 py-3.5 text-[0.8125rem] font-medium tracking-wide text-background"
+              aria-disabled={!agreed}
+              tabIndex={agreed ? 0 : -1}
+              className={`group relative overflow-hidden px-9 py-3.5 text-[0.8125rem] font-medium tracking-wide transition-opacity duration-300 ${
+                agreed
+                  ? "bg-foreground text-background cursor-pointer"
+                  : "bg-foreground/30 text-background/40 cursor-not-allowed pointer-events-none"
+              }`}
               id="register-form-btn"
             >
-              <span className="absolute inset-0 translate-y-full bg-cyan-accent transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
+              {agreed && (
+                <span className="absolute inset-0 translate-y-full bg-cyan-accent transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
+              )}
               <span className="relative">Open Registration Form</span>
             </a>
             <Link
@@ -125,7 +189,7 @@ function Page() {
       </DriftIn>
 
       {/* Payment notice */}
-      <DriftIn from="up" delay={0.46}>
+      <DriftIn from="up" delay={0.5}>
         <p className="mt-6 text-xs font-light text-steel/70 leading-relaxed max-w-lg">
           Registration is currently being collected through Google Forms. Payment instructions will
           be communicated separately after registration.

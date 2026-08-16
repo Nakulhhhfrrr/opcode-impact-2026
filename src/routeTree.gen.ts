@@ -18,6 +18,7 @@ import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as PrizesRouteImport } from './routes/prizes'
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as ScheduleRouteImport } from './routes/schedule'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as TracksRouteImport } from './routes/tracks'
 
 const IndexRoute = IndexRouteImport.update({
@@ -65,6 +66,11 @@ const ScheduleRoute = ScheduleRouteImport.update({
   path: '/schedule',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TracksRoute = TracksRouteImport.update({
   id: '/tracks',
   path: '/tracks',
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/prizes': typeof PrizesRoute
   '/register': typeof RegisterRoute
   '/schedule': typeof ScheduleRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/tracks': typeof TracksRoute
 }
 export interface FileRoutesByTo {
@@ -93,6 +100,7 @@ export interface FileRoutesByTo {
   '/prizes': typeof PrizesRoute
   '/register': typeof RegisterRoute
   '/schedule': typeof ScheduleRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/tracks': typeof TracksRoute
 }
 export interface FileRoutesById {
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   '/prizes': typeof PrizesRoute
   '/register': typeof RegisterRoute
   '/schedule': typeof ScheduleRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/tracks': typeof TracksRoute
 }
 export interface FileRouteTypes {
@@ -120,6 +129,7 @@ export interface FileRouteTypes {
     | '/prizes'
     | '/register'
     | '/schedule'
+    | '/terms-and-conditions'
     | '/tracks'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -132,6 +142,7 @@ export interface FileRouteTypes {
     | '/prizes'
     | '/register'
     | '/schedule'
+    | '/terms-and-conditions'
     | '/tracks'
   id:
     | '__root__'
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | '/prizes'
     | '/register'
     | '/schedule'
+    | '/terms-and-conditions'
     | '/tracks'
   fileRoutesById: FileRoutesById
 }
@@ -157,6 +169,7 @@ export interface RootRouteChildren {
   PrizesRoute: typeof PrizesRoute
   RegisterRoute: typeof RegisterRoute
   ScheduleRoute: typeof ScheduleRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   TracksRoute: typeof TracksRoute
 }
 
@@ -225,6 +238,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ScheduleRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tracks': {
       id: '/tracks'
       path: '/tracks'
@@ -245,6 +265,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrizesRoute: PrizesRoute,
   RegisterRoute: RegisterRoute,
   ScheduleRoute: ScheduleRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
   TracksRoute: TracksRoute,
 }
 export const routeTree = rootRouteImport

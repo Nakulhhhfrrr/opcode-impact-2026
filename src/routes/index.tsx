@@ -8,7 +8,7 @@ import { Contact, FAQ, QuickInfoStrip, RegistrationCTA } from "@/components/home
 const TITLE =
   "OPCODE IMPACT 2026 | National Level 24-Hour Cybersecurity for Sustainable Development Hackathon";
 const DESCRIPTION =
-  "Official website of OPCODE IMPACT 2026, a National Level 24-Hour Cybersecurity for Sustainable Development Hackathon hosted by the Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College, Thrissur.";
+  "Official website of OPCODE IMPACT 2026, a National Level 24-Hour Cybersecurity for Sustainable Development Hackathon hosted by the Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College (Autonomous), Thrissur.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

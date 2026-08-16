@@ -61,7 +61,7 @@ export function Hero() {
             <span className="label-micro text-cyan-accent">National Level Hackathon</span>
             <span className="h-px w-10 bg-white/25" />
             <span className="label-micro text-white/70">
-              9–10 October 2026 · Jyothi Engineering College · Thrissur, Kerala
+              9–10 October 2026 · Jyothi Engineering College (Autonomous) · Thrissur, Kerala
             </span>
           </motion.div>
 
@@ -86,7 +86,7 @@ export function Hero() {
               >
                 National Level 24-Hour Cybersecurity for Sustainable Development Hackathon. Hosted
                 by the Department of Computer Science &amp; Engineering (Cyber Security), Jyothi
-                Engineering College, Thrissur, Kerala.
+                Engineering College (Autonomous), Thrissur, Kerala.
               </motion.p>
             </div>
 
@@ -119,12 +119,12 @@ export function Hero() {
             >
               Problem Statements
             </a>
-            <a
-              href="#rules"
+            <Link
+              to="/terms-and-conditions"
               className="link-underline text-[0.8125rem] font-light tracking-wide text-white/60 transition-colors hover:text-foreground"
             >
               Rules &amp; Eligibility
-            </a>
+            </Link>
           </motion.div>
         </div>
       </motion.div>

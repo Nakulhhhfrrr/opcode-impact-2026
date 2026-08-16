@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PlaceholderPage } from "@/components/site/PlaceholderPage";
+import { Contact } from "@/components/home/Closing";
 
 const TITLE = "Contact — OPCODE IMPACT 2026";
 const DESCRIPTION =
@@ -26,11 +26,8 @@ export const Route = createFileRoute("/contact")({
 
 function Page() {
   return (
-    <PlaceholderPage
-      index="12"
-      eyebrow="Contact"
-      title="Reach the organising committee."
-      body="Direct contacts for participants, sponsors and press, plus travel directions to the Cheruthuruthy campus."
-    />
+    <main className="min-h-[100svh] pt-24 pb-20">
+      <Contact />
+    </main>
   );
 }

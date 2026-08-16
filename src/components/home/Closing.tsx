@@ -19,7 +19,7 @@ export function RegistrationCTA() {
           <p className="body-copy mt-6 max-w-lg text-[0.9375rem]">
             Open to student teams of 2–4 members from engineering and arts &amp; science colleges
             across India. Hosted by the Department of Computer Science &amp; Engineering (Cyber
-            Security), Jyothi Engineering College, Thrissur, Kerala.
+            Security), Jyothi Engineering College (Autonomous), Thrissur, Kerala.
           </p>
         </DriftIn>
 
@@ -120,7 +120,7 @@ const FAQS = [
   ],
   [
     "When and where is the event?",
-    "OPCODE IMPACT 2026 takes place on 9–10 October 2026 at Jyothi Engineering College, Cheruthuruthy, Thrissur, Kerala. The hackathon runs for 24 continuous hours.",
+    "OPCODE IMPACT 2026 takes place on 9–10 October 2026 at Jyothi Engineering College (Autonomous), Cheruthuruthy, Thrissur, Kerala. The hackathon runs for 24 continuous hours.",
   ],
   [
     "What is the registration fee?",
@@ -208,12 +208,12 @@ const FACULTY_COORDINATORS = [
   {
     name: "Dr. Geethu Mary George",
     email: "drgeethumarygeorge@jecc.ac.in",
-    phone: "+91 80899 92358",
-    phoneHref: "tel:+918089992358",
+    phone: null,
+    phoneHref: null,
   },
   {
     name: "Remya M",
-    email: "remyam@jecc.ac.in",
+    email: "Remyam@jecc.ac.in",
     phone: "7994232332",
     phoneHref: "tel:+917994232332",
   },
@@ -224,33 +224,32 @@ const STUDENT_COORDINATORS_WITH_CONTACT = [
     name: "Hrishikesh P V",
     phone: "+91 80752 29774",
     phoneHref: "tel:+918075229774",
-    email: "hrisheekeshpv@gmail.com",
   },
   {
-    name: "Nakul Suresh",
-    phone: "+91 88917 93404",
-    phoneHref: "tel:+918891793404",
-    email: null,
+    name: "Alvin Binoy",
+    phone: "+91 88480 32965",
+    phoneHref: "tel:+918848032965",
+  },
+  {
+    name: "Britto Jerry C",
+    phone: "+91 73561 14735",
+    phoneHref: "tel:+917356114735",
   },
   {
     name: "Abhinav K Ramesh",
     phone: "+91 88482 32698",
     phoneHref: "tel:+918848232698",
-    email: null,
   },
   {
-    name: "Mohammad Nihad P C",
-    phone: "+91 85905 89489",
-    phoneHref: "tel:+918590589489",
-    email: null,
+    name: "Nakul Suresh",
+    phone: "+91 88917 93404",
+    phoneHref: "tel:+918891793404",
   },
-];
-
-const STUDENT_COORDINATORS_LISTED = [
-  "Alvin Binoy",
-  "Britto Jerry C",
-  "Mohammad Bilal",
-  "Devanarayanan T N",
+  {
+    name: "Diya Ramesh",
+    phone: "+91 95677 78332",
+    phoneHref: "tel:+919567778332",
+  },
 ];
 
 export function Contact() {
@@ -265,11 +264,11 @@ export function Contact() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2">
             {[
               ["Host Department", "Department of Computer Science & Engineering (Cyber Security)"],
-              ["Host Institution", "Jyothi Engineering College, Thrissur, Kerala"],
+              ["Host Institution", "Jyothi Engineering College (Autonomous), Thrissur, Kerala"],
               ["Event Dates", "9–10 October 2026"],
               [
                 "Campus Address",
-                "Jyothi Engineering College, Cheruthuruthy, Thrissur — 679 531, Kerala, India.",
+                "Jyothi Engineering College (Autonomous), Cheruthuruthy, Thrissur — 679 531, Kerala, India.",
               ],
             ].map(([label, value], i) => (
               <DriftIn key={label} from="up" delay={i * 0.06}>
@@ -313,16 +312,18 @@ export function Contact() {
                           {fc.email}
                         </span>
                       </a>
-                      <a
-                        href={fc.phoneHref}
-                        className="flex items-baseline gap-2 group"
-                        aria-label={`Call ${fc.name}`}
-                      >
-                        <span className="label-micro text-steel shrink-0">Phone</span>
-                        <span className="text-xs font-light text-steel/80 transition-colors duration-300 group-hover:text-cyan-accent">
-                          {fc.phone}
-                        </span>
-                      </a>
+                      {fc.phone && fc.phoneHref && (
+                        <a
+                          href={fc.phoneHref}
+                          className="flex items-baseline gap-2 group"
+                          aria-label={`Call ${fc.name}`}
+                        >
+                          <span className="label-micro text-steel shrink-0">Phone</span>
+                          <span className="text-xs font-light text-steel/80 transition-colors duration-300 group-hover:text-cyan-accent">
+                            {fc.phone}
+                          </span>
+                        </a>
+                      )}
                     </div>
                   </motion.div>
                 ))}
@@ -336,8 +337,6 @@ export function Contact() {
               <p className="label-micro text-cyan-accent uppercase tracking-wider mb-6">
                 Student Coordinators
               </p>
-
-              {/* Coordinators with contact info */}
               <div className="grid gap-px border border-border bg-border sm:grid-cols-2">
                 {STUDENT_COORDINATORS_WITH_CONTACT.map((sc, i) => (
                   <motion.div
@@ -362,39 +361,13 @@ export function Contact() {
                           {sc.phone}
                         </span>
                       </a>
-                      {sc.email ? (
-                        <a
-                          href={`mailto:${sc.email}`}
-                          className="flex items-baseline gap-2 group"
-                          aria-label={`Email ${sc.name}`}
-                        >
-                          <span className="label-micro text-steel shrink-0">Email</span>
-                          <span className="text-xs font-light text-steel/80 break-all transition-colors duration-300 group-hover:text-cyan-accent">
-                            {sc.email}
-                          </span>
-                        </a>
-                      ) : null}
                     </div>
                   </motion.div>
                 ))}
               </div>
-
-              {/* Additional coordinators */}
-              <div className="mt-4">
-                <p className="label-micro text-steel mb-3">Also coordinating</p>
-                <div className="flex flex-wrap gap-2.5">
-                  {STUDENT_COORDINATORS_LISTED.map((name) => (
-                    <span
-                      key={name}
-                      className="border border-border bg-background/50 px-4 py-2 text-xs font-light text-foreground/80"
-                    >
-                      {name}
-                    </span>
-                  ))}
-                </div>
-              </div>
             </div>
           </DriftIn>
+
         </div>
       </div>
     </Section>

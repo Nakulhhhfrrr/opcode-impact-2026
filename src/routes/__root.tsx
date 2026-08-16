@@ -86,12 +86,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Official website of OPCODE IMPACT 2026, a National Level 24-Hour Cybersecurity for Sustainable Development Hackathon hosted by the Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College, Thrissur.",
+          "Official website of OPCODE IMPACT 2026, a National Level 24-Hour Cybersecurity for Sustainable Development Hackathon hosted by the Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College (Autonomous), Thrissur.",
       },
       {
         name: "author",
         content:
-          "Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College",
+          "Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College (Autonomous)",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://opcode-impact-2026.vercel.app" },
@@ -103,7 +103,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Official website of OPCODE IMPACT 2026, a National Level 24-Hour Cybersecurity for Sustainable Development Hackathon hosted by the Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College, Thrissur.",
+          "Official website of OPCODE IMPACT 2026, a National Level 24-Hour Cybersecurity for Sustainable Development Hackathon hosted by the Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College (Autonomous), Thrissur.",
       },
       {
         property: "og:image",
@@ -118,7 +118,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "twitter:description",
         content:
-          "Official website of OPCODE IMPACT 2026, a National Level 24-Hour Cybersecurity for Sustainable Development Hackathon hosted by the Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College, Thrissur.",
+          "Official website of OPCODE IMPACT 2026, a National Level 24-Hour Cybersecurity for Sustainable Development Hackathon hosted by the Department of Computer Science & Engineering (Cyber Security), Jyothi Engineering College (Autonomous), Thrissur.",
       },
       {
         property: "twitter:image",
