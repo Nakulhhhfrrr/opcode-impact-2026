@@ -65,16 +65,14 @@ export function RegistrationCTA() {
         <DriftIn from="up" delay={0.42}>
           <div className="mt-8 grid gap-6 sm:grid-cols-[1fr_auto] items-center">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfol77wlEq55j-BK3Kxbg3_s5a7gE7DiAV5QKiNQxsO86LRVA/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/register"
                 className="group relative overflow-hidden bg-foreground px-9 py-3.5 text-[0.8125rem] font-medium tracking-wide text-background"
                 id="register-now-btn"
               >
                 <span className="absolute inset-0 translate-y-full bg-cyan-accent transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
                 <span className="relative">Register Now</span>
-              </a>
+              </Link>
               <Link
                 to="/about"
                 className="group relative overflow-hidden border border-border px-9 py-3.5 text-[0.8125rem] font-light tracking-wide"
