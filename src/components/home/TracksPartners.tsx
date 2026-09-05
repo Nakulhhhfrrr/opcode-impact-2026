@@ -11,115 +11,47 @@ export function Tracks() {
           <SectionHeading>Competition Tracks</SectionHeading>
           <BlurIn delay={0.12}>
             <p className="body-copy mt-4 max-w-xl text-[0.9375rem]">
-              OPCODE IMPACT features two distinct competition tracks with dedicated focus areas and
-              evaluation criteria.
+              OPCODE IMPACT features seven distinct competition tracks spanning cybersecurity's
+              most critical domains — from industry challenges to digital trust.
             </p>
           </BlurIn>
         </div>
       </div>
 
-      <div className="mt-12 grid gap-8 lg:mt-16 lg:grid-cols-2">
-        {/* TRACK 01: Industry Challenge */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="group relative flex flex-col justify-between rounded-sm border border-cyan-accent/30 bg-navy/90 p-8 md:p-10 transition-all duration-500 hover:border-cyan-accent/70"
-        >
-          <div>
-            <div className="flex items-center justify-between">
-              <span className="inline-block border border-cyan-accent/40 bg-cyan-accent/10 px-3 py-1 font-mono text-[0.6875rem] tracking-wider uppercase text-cyan-accent">
-                TRACK 01
-              </span>
-              <span className="font-mono text-[3.5rem] font-light leading-none text-white/10">
-                01
-              </span>
-            </div>
-
-            <h3 className="mt-6 text-[1.75rem] font-light tracking-[-0.03em] text-foreground md:text-[2.25rem]">
-              <MaskReveal>Industry Challenge</MaskReveal>
-            </h3>
-
-            <p className="body-copy mt-4 text-[0.9375rem] leading-relaxed text-white/80">
-              Participants solve practical cybersecurity challenges contributed by industry and
-              government organizations. Real-world cybersecurity problem statements designed for
-              deployable impact.
-            </p>
-          </div>
-
-          <div className="mt-8 border-t border-white/10 pt-6">
-            <span className="label-micro mb-3 block text-white/40 uppercase">
-              Domain Focus Areas
-            </span>
-            <Stagger className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
-              {[
-                "Banking & Finance",
-                "Healthcare",
-                "Manufacturing",
-                "Government & Public Sector",
-                "IT Companies",
-                "Startups",
-              ].map((item) => (
-                <StaggerItem key={item}>
-                  <div className="border border-white/10 bg-white/[0.03] px-3 py-2 text-center text-xs font-light text-white/85 transition-colors group-hover:border-cyan-accent/30">
-                    {item}
-                  </div>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
-        </motion.div>
-
-        {/* TRACK 02: SDG Innovation Challenge */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
-          className="group relative flex flex-col justify-between rounded-sm border border-emerald-500/30 bg-[#0a1f1c]/90 p-8 md:p-10 transition-all duration-500 hover:border-emerald-400/70"
-        >
-          <div>
-            <div className="flex items-center justify-between">
-              <span className="inline-block border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 font-mono text-[0.6875rem] tracking-wider uppercase text-emerald-400">
-                TRACK 02
-              </span>
-              <span className="font-mono text-[3.5rem] font-light leading-none text-white/10">
-                02
-              </span>
-            </div>
-
-            <h3 className="mt-6 text-[1.75rem] font-light tracking-[-0.03em] text-foreground md:text-[2.25rem]">
-              <MaskReveal delay={0.12}>SDG Innovation Challenge</MaskReveal>
-            </h3>
-
-            <p className="body-copy mt-4 text-[0.9375rem] leading-relaxed text-white/80">
-              Participants create cybersecurity-enabled solutions that address real societal
-              challenges while supporting the UN Sustainable Development Goals.
-            </p>
-          </div>
-
-          <div className="mt-8 border-t border-white/10 pt-6">
-            <span className="label-micro mb-3 block text-white/40 uppercase">UN SDG Alignment</span>
-            <Stagger className="flex flex-col gap-2">
-              {[
-                "SDG 3 — Good Health & Well-being",
-                "SDG 4 — Quality Education",
-                "SDG 9 — Industry, Innovation & Infrastructure",
-                "SDG 11 — Sustainable Cities & Communities",
-                "SDG 13 — Climate Action",
-                "SDG 16 — Peace, Justice & Strong Institutions",
-              ].map((sdg) => (
-                <StaggerItem key={sdg}>
-                  <div className="flex items-center gap-2.5 border border-white/10 bg-white/[0.03] px-3.5 py-2 text-xs font-light text-emerald-300/90 transition-colors group-hover:border-emerald-500/30">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    <span>{sdg}</span>
-                  </div>
-                </StaggerItem>
-              ))}
-            </Stagger>
-          </div>
-        </motion.div>
+      <div className="mt-12 grid gap-6 lg:mt-16 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {[
+          { num: "01", title: "Industry Challenges", color: "cyan", desc: "Solve real-world cybersecurity problems contributed by industry and government organisations for deployable impact." },
+          { num: "02", title: "SDG Goals", color: "emerald", desc: "Build secure, sustainable solutions aligned with the UN Sustainable Development Goals." },
+          { num: "03", title: "Digital Forensics & Cyber Intelligence", color: "violet", desc: "Investigate digital evidence, threat intelligence, and cyber crime analysis at scale." },
+          { num: "04", title: "Cloud, DevSecOps & Supply Chain Security", color: "sky", desc: "Secure cloud-native pipelines, DevSecOps workflows, and software supply chains." },
+          { num: "05", title: "Post-Quantum Security", color: "amber", desc: "Design and implement cryptographic systems resilient against quantum computing threats." },
+          { num: "06", title: "IoT, OT & Critical Infrastructure", color: "rose", desc: "Protect operational technology, industrial control systems, and critical national infrastructure." },
+          { num: "07", title: "Deepfakes, Synthetic Media & Digital Trust", color: "indigo", desc: "Combat synthetic media threats and build frameworks for digital authenticity and trust." },
+        ].map(({ num, title, color, desc }, i) => {
+          const borderClass = color === "cyan" ? "border-cyan-accent/30 hover:border-cyan-accent/70" : color === "emerald" ? "border-emerald-500/30 hover:border-emerald-400/70" : color === "violet" ? "border-violet-500/30 hover:border-violet-400/70" : color === "sky" ? "border-sky-500/30 hover:border-sky-400/70" : color === "amber" ? "border-amber-500/30 hover:border-amber-400/70" : color === "rose" ? "border-rose-500/30 hover:border-rose-400/70" : "border-indigo-500/30 hover:border-indigo-400/70";
+          const badgeClass = color === "cyan" ? "border-cyan-accent/40 bg-cyan-accent/10 text-cyan-accent" : color === "emerald" ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-400" : color === "violet" ? "border-violet-500/40 bg-violet-500/10 text-violet-400" : color === "sky" ? "border-sky-500/40 bg-sky-500/10 text-sky-400" : color === "amber" ? "border-amber-500/40 bg-amber-500/10 text-amber-400" : color === "rose" ? "border-rose-500/40 bg-rose-500/10 text-rose-400" : "border-indigo-500/40 bg-indigo-500/10 text-indigo-400";
+          return (
+            <motion.div
+              key={num}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: i * 0.07 }}
+              className={`group relative flex flex-col rounded-sm border bg-navy/90 p-7 transition-all duration-500 ${borderClass}`}
+            >
+              <div className="flex items-center justify-between">
+                <span className={`inline-block border px-3 py-1 font-mono text-[0.6875rem] tracking-wider uppercase ${badgeClass}`}>
+                  TRACK {num}
+                </span>
+                <span className="font-mono text-[2.5rem] font-light leading-none text-white/10">{num}</span>
+              </div>
+              <h3 className="mt-5 text-[1.1rem] font-light tracking-[-0.025em] text-foreground leading-snug">
+                <MaskReveal delay={i * 0.05}>{title}</MaskReveal>
+              </h3>
+              <p className="body-copy mt-3 text-[0.875rem] leading-relaxed text-white/70">{desc}</p>
+            </motion.div>
+          );
+        })}
       </div>
     </Section>
   );
@@ -180,12 +112,13 @@ export function ProblemStatements() {
 
       <div className="mt-12 lg:mt-16">
         {[
-          { code: "TRACK 01", label: "Industry Challenge Statement Set", status: "Coming Soon" },
-          {
-            code: "TRACK 02",
-            label: "SDG Innovation Challenge Statement Set",
-            status: "Coming Soon",
-          },
+          { code: "TRACK 01", label: "Industry Challenges", status: "Coming Soon" },
+          { code: "TRACK 02", label: "SDG Goals", status: "Coming Soon" },
+          { code: "TRACK 03", label: "Digital Forensics & Cyber Intelligence", status: "Coming Soon" },
+          { code: "TRACK 04", label: "Cloud, DevSecOps & Supply Chain Security", status: "Coming Soon" },
+          { code: "TRACK 05", label: "Post-Quantum Security", status: "Coming Soon" },
+          { code: "TRACK 06", label: "IoT, OT & Critical Infrastructure", status: "Coming Soon" },
+          { code: "TRACK 07", label: "Deepfakes, Synthetic Media & Digital Trust", status: "Coming Soon" },
         ].map((s, i) => (
           <DriftIn key={s.code} from="up" distance={20} delay={i * 0.08}>
             <div className="group grid grid-cols-[auto_1fr] items-center gap-x-6 border-t border-border py-6 transition-colors duration-500 hover:border-cyan-accent md:grid-cols-[8rem_1fr_auto]">

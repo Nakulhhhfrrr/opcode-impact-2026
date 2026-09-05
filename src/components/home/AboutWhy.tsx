@@ -72,7 +72,7 @@ export function About() {
           <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:grid-cols-2">
             {[
               ["24", "Hours continuous"],
-              ["2", "Competition tracks"],
+              ["7", "Competition tracks"],
               ["1", "National mandate"],
               ["SDG", "Aligned innovation"],
             ].map(([value, label], i) => (

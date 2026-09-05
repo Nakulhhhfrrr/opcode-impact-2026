@@ -3,7 +3,7 @@ import { PlaceholderPage } from "@/components/site/PlaceholderPage";
 
 const TITLE = "Tracks — OPCODE IMPACT 2026";
 const DESCRIPTION =
-  "Detailed track briefs, eligibility, evaluation rubrics and submission requirements for both competition tracks.";
+  "Explore the seven cybersecurity tracks covering industry challenges, SDG goals, digital forensics, cloud and supply chain security, post-quantum security, critical infrastructure, and digital trust.";
 
 export const Route = createFileRoute("/tracks")({
   head: () => ({
@@ -27,10 +27,10 @@ export const Route = createFileRoute("/tracks")({
 function Page() {
   return (
     <PlaceholderPage
-      index="03"
+      index="07"
       eyebrow="Tracks"
-      title="Industry Challenge and SDG Innovation."
-      body="Detailed track briefs, eligibility, evaluation rubrics and submission requirements for both competition tracks."
+      title="Seven Tracks. One Mission."
+      body="Explore the seven cybersecurity tracks covering industry challenges, SDG goals, digital forensics, cloud and supply chain security, post-quantum security, critical infrastructure, and digital trust."
     />
   );
 }
