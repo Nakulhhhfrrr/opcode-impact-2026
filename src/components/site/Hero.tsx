@@ -115,8 +115,8 @@ export function Hero() {
               <span className="relative">Download Poster</span>
             </a>
             <a
-              href="/Brochure.png"
-              download="OPCODE-IMPACT-2026-Brochure.png"
+              href="/Brochure.jpeg"
+              download="OPCODE-IMPACT-2026-Brochure.jpeg"
               className="group relative overflow-hidden border border-white/45 px-8 py-3.5 text-[0.8125rem] font-light tracking-wide"
             >
               <span className="absolute inset-0 -translate-x-full bg-white/10 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-0" />
