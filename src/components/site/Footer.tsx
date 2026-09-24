@@ -41,6 +41,8 @@ export function Footer() {
                 className="h-8 w-auto object-contain opacity-60 hover:opacity-90 transition-opacity duration-300"
               />
             </div>
+
+
           </div>
 
           <div>
@@ -87,9 +89,36 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-3 border-t border-border pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="label-micro">© 2026 Jyothi Engineering College (Autonomous)</p>
-          <p className="label-micro">Thrissur · Kerala · India</p>
+        {/* Full-width Partner Logos */}
+        <div className="mt-16 border-t border-border pt-8">
+          <p className="label-micro mb-6 text-steel text-center md:text-left">Sponsors & Partners</p>
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-8 md:gap-12">
+             <a href="https://redteamacademy.com" target="_blank" rel="noopener noreferrer" className="block">
+               <img src="/partners/red-team.png" alt="Red Team" className="h-7 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-150 grayscale hover:grayscale-0" />
+             </a>
+             <a href="https://nestgroup.net/" target="_blank" rel="noopener noreferrer" className="block">
+               <img src="/partners/nest.png" alt="NeST" className="h-6 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-150 grayscale hover:grayscale-0" />
+             </a>
+             <a href="https://www.esafbank.com/" target="_blank" rel="noopener noreferrer" className="block">
+               <img src="/partners/esaf.png" alt="ESAF" className="h-8 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-150 grayscale hover:grayscale-0" />
+             </a>
+             <a href="https://ksaac.duk.ac.in/" target="_blank" rel="noopener noreferrer" className="block">
+               <img src="/partners/ksaac.png" alt="K-SAAC" className="h-8 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-150 grayscale hover:grayscale-0" />
+             </a>
+             <a href="https://dendo.in/" target="_blank" rel="noopener noreferrer" className="block">
+               <img src="/partners/dendo.png" alt="Dendo" className="h-7 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-150 grayscale hover:grayscale-0" />
+             </a>
+             <a href="https://www.hackuptechnology.com/" target="_blank" rel="noopener noreferrer" className="block">
+               <img src="/partners/hackup-technology.png" alt="Hackup" className="h-10 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-150 grayscale hover:grayscale-0" />
+             </a>
+             <img src="/partners/codespace-solutions.png" alt="CodeSpace" className="h-8 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-150 grayscale hover:grayscale-0 block" />
+             <img src="/partners/megacy-soft-solutions.png" alt="Megacy" className="h-5 w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-150 grayscale hover:grayscale-0 block" />
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-col gap-3 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
+          <p className="label-micro text-steel/50">© 2026 Jyothi Engineering College (Autonomous) · Thrissur, Kerala, India</p>
+          <p className="label-micro text-steel/30">Built with ♥ by the CS&E (Cyber Security) Department</p>
         </div>
       </div>
     </footer>

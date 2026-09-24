@@ -40,23 +40,35 @@ export function Countdown() {
       className="w-full min-w-0"
       aria-label="Countdown to registration close"
     >
-      <motion.p
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: EASE, delay: 1.5 }}
-        className="mb-3 text-[0.5625rem] font-light tracking-[0.18em] uppercase text-white/40"
+        className="mb-3 flex items-center gap-2"
       >
-        Registration closes
-      </motion.p>
+        <span className="relative flex h-1.5 w-1.5">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-accent opacity-75" />
+          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan-accent" />
+        </span>
+        <p className="text-[0.5625rem] font-light tracking-[0.18em] uppercase text-white/40">
+          Registration closes
+        </p>
+      </motion.div>
       <div className="grid w-full grid-cols-4 border-t border-white/20 pt-6">
         {units.map(([label, value], i) => (
           <div
             key={label}
-            className={`min-w-0 pr-3 md:pr-8 ${i > 0 ? "border-l border-white/15 pl-3 md:pl-8" : ""}`}
+            className={`group min-w-0 pr-3 md:pr-8 ${i > 0 ? "border-l border-white/15 pl-3 md:pl-8" : ""}`}
           >
-            <div className="font-mono text-[1.5rem] leading-none font-light tabular-nums md:text-[2.5rem]">
+            <motion.div
+              key={value}
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: EASE }}
+              className="font-mono text-[1.5rem] leading-none font-light tabular-nums md:text-[2.5rem] text-foreground"
+            >
               {value === null ? "--" : String(value).padStart(2, "0")}
-            </div>
+            </motion.div>
             <div className="label-micro mt-2.5 text-[0.5625rem] text-white/55 md:text-[0.625rem]">
               {label}
             </div>
@@ -66,3 +78,4 @@ export function Countdown() {
     </motion.div>
   );
 }
+

@@ -7,34 +7,229 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Nav } from "../components/site/Nav";
 import { Footer } from "../components/site/Footer";
 
-function NotFoundComponent() {
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+function GlitchNumber() {
+  const [glitch, setGlitch] = useState(false);
+
+  useEffect(() => {
+    const trigger = () => {
+      setGlitch(true);
+      setTimeout(() => setGlitch(false), 180);
+    };
+    // Initial glitch shortly after mount, then recurring
+    const t = setTimeout(() => {
+      trigger();
+      const id = setInterval(trigger, 3500 + Math.random() * 1500);
+      return () => clearInterval(id);
+    }, 1200);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+    <div className="relative select-none leading-none">
+      {/* Glitch layers */}
+      <AnimatePresence>
+        {glitch && (
+          <>
+            <motion.span
+              key="g-r"
+              className="pointer-events-none absolute inset-0 font-mono font-light text-rose-500/70"
+              style={{ clipPath: "inset(15% 0 55% 0)", fontSize: "inherit" }}
+              animate={{ x: [0, -10, 5, 0] }}
+              transition={{ duration: 0.14, ease: "linear" }}
+            >404</motion.span>
+            <motion.span
+              key="g-c"
+              className="pointer-events-none absolute inset-0 font-mono font-light text-cyan-accent/60"
+              style={{ clipPath: "inset(50% 0 15% 0)", fontSize: "inherit" }}
+              animate={{ x: [0, 8, -4, 0] }}
+              transition={{ duration: 0.14, ease: "linear", delay: 0.05 }}
+            >404</motion.span>
+          </>
+        )}
+      </AnimatePresence>
+      <span className="font-mono font-light">404</span>
+    </div>
+  );
+}
+
+function BlinkCursor() {
+  const [on, setOn] = useState(true);
+  useEffect(() => {
+    const id = setInterval(() => setOn((v) => !v), 530);
+    return () => clearInterval(id);
+  }, []);
+  return (
+    <span
+      className={`inline-block w-[2px] bg-cyan-accent align-middle ml-0.5 transition-opacity duration-75 ${on ? "opacity-100" : "opacity-0"}`}
+      style={{ height: "1.05em" }}
+    />
+  );
+}
+
+function NotFoundComponent() {
+  const path = typeof window !== "undefined" ? window.location.pathname : "/unknown";
+  // Truncate long paths so they don't overflow on mobile
+  const displayPath = path.length > 24 ? path.slice(0, 22) + "…" : path;
+
+  return (
+    <div className="relative flex min-h-[100svh] flex-col overflow-hidden">
+
+      {/* Scanlines */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{ backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, oklch(1 0 0 / 0.012) 2px, oklch(1 0 0 / 0.012) 4px)" }}
+      />
+
+      {/* Background watermark 404 */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4, ease: EASE, delay: 0.05 }}
+        className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden"
+        aria-hidden="true"
+      >
+        <span
+          className="font-mono font-light leading-none text-foreground/[0.04] select-none whitespace-nowrap"
+          style={{ fontSize: "clamp(6rem, 30vw, 22rem)", letterSpacing: "-0.04em" }}
+        >
+          404
+        </span>
+      </motion.div>
+
+      {/* Ambient glow */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 h-[30rem] w-[30rem] sm:h-[50rem] sm:w-[50rem] rounded-full bg-cyan-accent/[0.04] blur-3xl" />
+      </div>
+
+      {/* Main centered content */}
+      <div className="relative z-10 shell flex flex-1 flex-col justify-center py-24 md:py-24">
+        <div className="w-full max-w-xl">
+
+          {/* Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, x: -16 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: EASE, delay: 0.1 }}
+            className="flex items-center gap-3 mb-5"
           >
-            Go home
-          </Link>
+            <span className="relative flex h-1.5 w-1.5 shrink-0">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-rose-500 opacity-60" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-rose-500" />
+            </span>
+            <span className="label-micro text-rose-400">System Error</span>
+            <span className="h-px w-6 bg-white/15 hidden xs:block" />
+            <span className="label-micro text-steel hidden xs:block">404 — Not Found</span>
+          </motion.div>
+
+          {/* Glitch number */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: EASE, delay: 0.2 }}
+            className="text-[2.75rem] sm:text-[4rem] text-foreground/15 mb-3"
+          >
+            <GlitchNumber />
+          </motion.div>
+
+          {/* Divider */}
+          <motion.div
+            initial={{ scaleX: 0, originX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.8, ease: EASE, delay: 0.4 }}
+            className="h-px bg-border mb-4"
+          />
+
+          {/* Terminal block */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: EASE, delay: 0.55 }}
+            className="border border-border bg-navy/50 px-4 py-3 mb-5 overflow-hidden"
+          >
+            <p className="font-mono text-[0.6875rem] sm:text-[0.75rem] leading-relaxed text-steel break-all">
+              <span className="text-cyan-accent">opcode@impact</span>
+              <span className="text-steel/50">:</span>
+              <span className="text-violet-400">~</span>
+              <span className="text-steel/50">$ </span>
+              <span className="text-foreground/80">resolve </span>
+              <span className="text-amber-400/80">"{displayPath}"</span>
+              <BlinkCursor />
+            </p>
+            <p className="font-mono text-[0.625rem] sm:text-[0.6875rem] text-rose-400/60 mt-1.5 break-words">
+              ERR_ROUTE_NOT_FOUND: No handler for "{displayPath}"
+            </p>
+            <p className="font-mono text-[0.625rem] sm:text-[0.6875rem] text-steel/40 mt-0.5">
+              The packet was lost in transit.
+            </p>
+          </motion.div>
+
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: EASE, delay: 0.7 }}
+            className="text-[1.375rem] sm:text-[1.875rem] font-light tracking-[-0.03em] leading-tight mb-2"
+          >
+            Page not found.
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, ease: EASE, delay: 0.82 }}
+            className="text-[0.875rem] font-light text-steel leading-relaxed mb-6"
+          >
+            This route doesn't exist or has been moved. Head back to base.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: EASE, delay: 0.95 }}
+            className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4 sm:gap-x-6"
+          >
+            <Link
+              to="/"
+              className="group relative overflow-hidden bg-foreground px-8 py-3.5 text-[0.8125rem] font-medium tracking-wide text-background text-center sm:text-left"
+            >
+              <span className="absolute inset-0 translate-y-full bg-cyan-accent transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
+              <span className="relative">Return Home</span>
+            </Link>
+            <Link
+              to="/register"
+              className="text-center sm:text-left border-b border-white/20 pb-1 text-[0.8125rem] font-light tracking-wide text-white/60 transition-colors duration-150 hover:border-cyan-accent hover:text-foreground self-center"
+            >
+              Register for the hackathon
+            </Link>
+          </motion.div>
+
+          {/* Bottom meta */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, ease: EASE, delay: 1.2 }}
+            className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-y-1 sm:gap-x-4 border-t border-border/50 pt-4"
+          >
+            <span className="label-micro text-steel/30">OPCODE IMPACT 2026</span>
+            <span className="label-micro text-steel/30">9–10 Oct · Thrissur, Kerala</span>
+            <span className="label-micro text-steel/30 hidden sm:inline">Jyothi Engineering College (Autonomous)</span>
+          </motion.div>
         </div>
       </div>
     </div>
   );
 }
+
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);

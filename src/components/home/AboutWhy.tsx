@@ -78,7 +78,7 @@ export function About() {
             ].map(([value, label], i) => (
               <DriftIn key={label} from="up" delay={i * 0.08}>
                 <div className="border-t border-border pt-4">
-                  <div className="font-mono text-[2rem] leading-none font-light tabular-nums lg:text-[2.5rem]">
+                  <div className="font-mono text-[2rem] leading-none font-light tabular-nums lg:text-[2.5rem] text-cyan-accent">
                     {value}
                   </div>
                   <p className="label-micro mt-2 text-steel">{label}</p>
@@ -242,11 +242,15 @@ export function WhyParticipate() {
             delay={(i % 2) * 0.05}
             className={b.span}
           >
-            <div className="group border-t border-border pt-4 transition-colors duration-500 hover:border-cyan-accent">
-              <span className="font-mono text-[0.625rem] text-steel">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-2.5 text-[1.125rem] font-light tracking-[-0.02em] md:text-[1.35rem]">
+            <div className="group relative border-t border-border pt-4 transition-colors duration-150 hover:border-cyan-accent overflow-hidden">
+              <div className="absolute inset-0 -translate-y-full bg-gradient-to-b from-cyan-accent/5 to-transparent transition-transform duration-150 group-hover:translate-y-0 pointer-events-none" />
+              <div className="relative flex items-start justify-between">
+                <span className="font-mono text-[0.625rem] text-steel transition-colors duration-150 group-hover:text-cyan-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="translate-x-2 opacity-0 font-mono text-[0.6rem] text-cyan-accent transition-all duration-150 group-hover:translate-x-0 group-hover:opacity-100">→</span>
+              </div>
+              <h3 className="mt-2.5 text-[1.125rem] font-light tracking-[-0.02em] md:text-[1.35rem] transition-colors duration-150 group-hover:text-white">
                 {b.title}
               </h3>
               <p className="body-copy mt-2 text-xs leading-relaxed text-steel">{b.body}</p>
@@ -254,6 +258,19 @@ export function WhyParticipate() {
           </DriftIn>
         ))}
       </div>
+
+      <DriftIn from="up" delay={0.2} className="mt-12">
+        <div className="flex flex-wrap items-center gap-6 border-t border-border pt-8">
+          <a
+            href="#register"
+            className="group relative overflow-hidden bg-foreground px-8 py-3.5 text-[0.8125rem] font-medium tracking-wide text-background"
+          >
+            <span className="absolute inset-0 translate-y-full bg-cyan-accent transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-y-0" />
+            <span className="relative">Register Now — ₹300/participant</span>
+          </a>
+          <p className="text-[0.8125rem] font-light text-steel">Food &amp; accommodation included for all participants.</p>
+        </div>
+      </DriftIn>
     </Section>
   );
 }

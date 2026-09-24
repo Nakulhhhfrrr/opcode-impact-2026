@@ -63,13 +63,13 @@ export function Timeline() {
 
         {events.map(([time, title, body]) => (
           <DriftIn key={title} from="right" distance={24} delay={0.04}>
-            <div className="relative grid gap-x-10 pb-10 md:grid-cols-[13rem_1fr] md:pb-12">
+            <div className="relative grid gap-x-10 pb-10 md:grid-cols-[13rem_1fr] md:pb-12 group">
               <div className="md:text-right md:pr-10">
                 <span className="label-micro text-cyan-accent">{time}</span>
               </div>
               <div className="relative">
-                <span className="absolute top-[0.4rem] -left-[calc(2rem-0px)] h-1.5 w-1.5 rounded-full bg-cyan-accent md:-left-[calc(2.5rem+0.75px)]" />
-                <h3 className="text-[1.125rem] font-light tracking-[-0.02em] md:text-[1.35rem]">
+                <span className="absolute top-[0.4rem] -left-[calc(2rem-0px)] h-1.5 w-1.5 rounded-full bg-cyan-accent md:-left-[calc(2.5rem+0.75px)] ring-4 ring-cyan-accent/20 transition-all duration-150 group-hover:ring-cyan-accent/50" />
+                <h3 className="text-[1.125rem] font-light tracking-[-0.02em] md:text-[1.35rem] transition-colors duration-150 group-hover:text-cyan-accent">
                   {title}
                 </h3>
                 <p className="body-copy mt-2 max-w-md text-sm leading-relaxed">{body}</p>
@@ -136,10 +136,11 @@ export function Prizes() {
       <div className="mt-12 space-y-px border border-border bg-border lg:mt-16">
         {opportunities.map((o, i) => (
           <DriftIn key={o.icon} from="left" distance={20} delay={i * 0.07}>
-            <div className="grid gap-4 bg-background p-6 md:grid-cols-[3rem_1fr] md:p-8 md:gap-8 items-start">
-              <span className="font-mono text-[0.6875rem] text-cyan-accent pt-0.5">{o.icon}</span>
+            <div className="group relative grid gap-4 bg-background p-6 md:grid-cols-[3rem_1fr] md:p-8 md:gap-8 items-start overflow-hidden transition-colors duration-150 hover:bg-navy/40">
+              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-cyan-accent scale-y-0 transition-transform duration-150 origin-top group-hover:scale-y-100" />
+              <span className="font-mono text-[0.6875rem] text-cyan-accent pt-0.5 transition-transform duration-150 group-hover:scale-110">{o.icon}</span>
               <div>
-                <h3 className="text-[1rem] font-light tracking-[-0.015em] text-foreground">
+                <h3 className="text-[1rem] font-light tracking-[-0.015em] text-foreground transition-colors duration-150 group-hover:text-cyan-accent">
                   {o.label}
                 </h3>
                 <p className="body-copy mt-1.5 text-sm text-steel leading-relaxed">{o.body}</p>
@@ -193,7 +194,7 @@ export function Judges() {
         </div>
       </div>
 
-      <div className="mt-12 grid gap-x-8 gap-y-px border border-border bg-border sm:grid-cols-2 lg:mt-16">
+      <div className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:mt-16">
         {profiles.map((p, i) => (
           <motion.div
             key={p.label}

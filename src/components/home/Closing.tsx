@@ -148,14 +148,14 @@ export function FAQ() {
             {FAQS.map(([q, a], i) => {
               const isOpen = open === i;
               return (
-                <div key={q} className="border-t border-border">
+                <div key={q} className="group border-t border-border transition-colors duration-150 hover:border-cyan-accent/50">
                   <button
                     type="button"
                     onClick={() => setOpen(isOpen ? null : i)}
                     aria-expanded={isOpen}
                     aria-controls={`faq-answer-${i}`}
                     id={`faq-question-${i}`}
-                    className="group flex w-full items-start justify-between gap-8 py-5 text-left"
+                    className="flex w-full items-start justify-between gap-8 py-5 text-left"
                   >
                     <span className="text-[1rem] font-light tracking-[-0.015em] transition-colors duration-300 group-hover:text-cyan-accent md:text-[1.125rem]">
                       {q}
@@ -181,7 +181,7 @@ export function FAQ() {
                         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden"
                       >
-                        <p className="body-copy max-w-xl pb-6 text-sm leading-relaxed">{a}</p>
+                        <p className="body-copy max-w-xl pb-6 text-sm leading-relaxed border-l-2 border-cyan-accent/40 pl-4 ml-0">{a}</p>
                       </motion.div>
                     ) : null}
                   </AnimatePresence>
@@ -306,7 +306,7 @@ export function Contact() {
                         aria-label={`Email ${fc.name}`}
                       >
                         <span className="label-micro text-steel shrink-0">Email</span>
-                        <span className="text-xs font-light text-steel/80 break-all transition-colors duration-300 group-hover:text-cyan-accent">
+                        <span className="text-xs font-light text-steel/80 break-all transition-colors duration-150 group-hover:text-cyan-accent">
                           {fc.email}
                         </span>
                       </a>
@@ -317,7 +317,7 @@ export function Contact() {
                           aria-label={`Call ${fc.name}`}
                         >
                           <span className="label-micro text-steel shrink-0">Phone</span>
-                          <span className="text-xs font-light text-steel/80 transition-colors duration-300 group-hover:text-cyan-accent">
+                          <span className="text-xs font-light text-steel/80 transition-colors duration-150 group-hover:text-cyan-accent">
                             {fc.phone}
                           </span>
                         </a>
@@ -355,7 +355,7 @@ export function Contact() {
                         aria-label={`Call ${sc.name}`}
                       >
                         <span className="label-micro text-steel shrink-0">Phone</span>
-                        <span className="text-xs font-light text-steel/80 transition-colors duration-300 group-hover:text-cyan-accent">
+                        <span className="text-xs font-light text-steel/80 transition-colors duration-150 group-hover:text-cyan-accent">
                           {sc.phone}
                         </span>
                       </a>
@@ -392,10 +392,10 @@ export function QuickInfoStrip() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.06 }}
-              className="flex min-w-[9rem] flex-1 flex-col justify-center bg-background px-5 py-5 sm:py-6"
+              className="group flex min-w-[9rem] flex-1 flex-col justify-center bg-background px-5 py-5 sm:py-6 transition-colors duration-150 hover:bg-navy/60 cursor-default"
             >
-              <span className="label-micro text-steel">{item.label}</span>
-              <span className="mt-1.5 text-[0.9375rem] font-light tracking-[-0.015em] text-foreground">
+              <span className="label-micro text-steel transition-colors duration-150 group-hover:text-cyan-accent">{item.label}</span>
+              <span className="mt-1.5 text-[0.9375rem] font-light tracking-[-0.015em] text-foreground transition-all duration-150 group-hover:translate-x-1">
                 {item.value}
               </span>
             </motion.div>

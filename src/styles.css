@@ -95,6 +95,21 @@
     text-rendering: optimizeLegibility;
   }
 
+  /* Custom minimal scrollbar */
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(1 0 0 / 15%);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--cyan-accent);
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -102,11 +117,20 @@
     font-feature-settings:
       "tnum" 1,
       "ss01" 1;
+    /* Subtle radial ambient glow from center-top */
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.83 0.135 202 / 0.06) 0%, transparent 60%);
   }
 
   ::selection {
     background: var(--cyan-accent);
     color: var(--background);
+  }
+
+  /* Focus visible ring for accessibility */
+  :focus-visible {
+    outline: 1.5px solid var(--cyan-accent);
+    outline-offset: 3px;
   }
 }
 

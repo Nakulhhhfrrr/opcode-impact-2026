@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll, useSpring } from "motion/react";
 import { useEffect, useState } from "react";
 import { EASE } from "./motion-primitives";
 
@@ -18,7 +18,8 @@ const LINKS = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const { scrollY } = useScroll();
+  const { scrollY, scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 200, damping: 30 });
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 40));
@@ -99,6 +100,11 @@ export function Nav() {
               </span>
             </button>
           </div>
+          {/* Scroll progress bar */}
+          <motion.div
+            style={{ scaleX, transformOrigin: "left" }}
+            className="absolute inset-x-0 bottom-0 h-px bg-cyan-accent origin-left"
+          />
         </div>
       </motion.header>
 

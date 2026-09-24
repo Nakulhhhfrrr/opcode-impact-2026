@@ -46,7 +46,6 @@ function Index() {
       <Timeline />
       <Prizes />
       <Judges />
-      <Sponsors />
       <RegistrationCTA />
       <QuickInfoStrip />
       <FAQ />
